@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style/index.css">
+  <title>Welcome Site</title>
+  
+</head>
+<body>
+
+  <div class="weather-box" id="weatherBox">
+    Loading weather...
+  </div>
+
+  <div class="container">
+    <h1>School Location Tracker in Albay via QR Code</h1>
+    <p>Your go-to portal for live weather updates.</p>
+    <p>Plan your day with real-time data from Legazpi City.</p>
+    <a href="page2.html">
+      <button class="enter-btn">ENTER</button>
+    </a>
+  </div>
+
+  <script>
+    const apiKey = '3e8dcee3e3d0629d76c1d13a33d31c00';
+    const city = 'Legazpi City';
+
+    async function fetchWeather() {
+      try {
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+        const data = await res.json();
+
+        const temp = data.main.temp;
+        const desc = data.weather[0].description;
+        const icon = data.weather[0].icon;
+        const humidity = data.main.humidity;
+        const tempMax = data.main.temp_max;
+        const tempMin = data.main.temp_min;
+        const pressure = data.main.pressure;
+
+        document.getElementById('weatherBox').innerHTML = `
+          <strong>Weather in ${city}</strong><br>
+          <img src="https://openweathermap.org/img/wn/${icon}.png" alt="${desc}" style="vertical-align: middle;"><br>
+          <strong>${temp}°C</strong>, ${desc}<br>
+          <strong>Humidity:</strong> ${humidity}%<br>
+          <strong>Max Temp:</strong> ${tempMax}°C<br>
+          <strong>Min Temp:</strong> ${tempMin}°C<br>
+          <strong>Pressure:</strong> ${pressure} hPa
+        `;
+      } catch (err) {
+        document.getElementById('weatherBox').innerText = 'Failed to load weather.';
+        console.error(err);
+      }
+    }
+
+    fetchWeather();
+  </script>
+
+</body>
+</html>

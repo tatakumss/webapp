@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Divine Word College of Legazpi</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #687FE5, #9ECAD6);
+  color: #333;
+  min-height: 100vh;
+  position: relative;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  color: white;
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.image-container {
+  flex: 1 1 300px;
+  max-width: 500px;
+  margin-top: 20px;
+  transform: translateX(-10px);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.description-container {
+  flex: 1 1 300px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.description-container h2 {
+  color: #687FE5;
+  margin-bottom: 1rem;
+}
+
+.description-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+}
+
+.qr-container {
+  margin-top: 2rem;
+  text-align: center;
+  background: #ffffffcc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.qr-container img {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+}
+
+.qr-container p {
+  margin-top: 0.8rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.back-button-top {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.back-button-top a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: black;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.back-button-top a:hover {
+  background-color: #5a6ed8;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  header {
+    font-size: 2.2rem;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="back-button-top">
+        <a href="page2.html">← Back</a>
+      </div>
+    
+      <header>
+        Divine Word College of Legazpi
+      </header>
+    
+      <section class="main-container">
+        <div class="image-container">
+          <img src="assets/divineBG.jpg" alt="Divine Word College of Legazpi">
+        </div>
+    
+        <div class="description-container">
+          <h2>Academic Excellence at DWCL</h2>
+          <p>
+            Divine Word College of Legazpi (DWCL) is a Catholic institution dedicated to delivering quality, values-based education. It offers a range of academic programs in fields such as Business, Education, Information Technology, Accountancy, and Theology, designed to develop critical thinking, leadership, and professional skills. Equipped with modern facilities and supported by committed faculty, DWCL ensures a learning environment that fosters academic excellence, ethical values, and holistic student development.
+          </p>
+    
+          <div class="qr-container">
+            <img src="assets/dwcl-qr.png" alt="Scan QR Code">
+            <p>Scan to locate about DWCL</p>
+          </div>
+        </div>
+      </section>
+
+</body>
+
+</html>
