@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bicol College</title>
   <style>
     * {
@@ -39,10 +40,8 @@
     }
 
     .image-container {
-      flex: 1 1 300px;
+      flex: 1 1 400px;
       max-width: 500px;
-      margin-top: 20px;
-      transform: translateX(-10px);
     }
 
     .image-container img {
@@ -53,7 +52,7 @@
     }
 
     .description-container {
-      flex: 1 1 300px;
+      flex: 1 1 400px;
       background-color: rgba(255, 255, 255, 0.97);
       border-radius: 12px;
       padding: 2rem;
@@ -64,6 +63,7 @@
     .description-container h2 {
       color: #641B2E;
       margin-bottom: 1rem;
+      font-size: 1.8rem;
     }
 
     .description-container p {
@@ -117,14 +117,58 @@
       background-color: #e0a800;
     }
 
+    @media (max-width: 1024px) {
+      header {
+        font-size: 2.4rem;
+      }
+
+      .description-container h2 {
+        font-size: 1.6rem;
+      }
+
+      .description-container p {
+        font-size: 1rem;
+      }
+    }
+
     @media (max-width: 768px) {
       .main-container {
         flex-direction: column;
         padding: 1.5rem;
       }
 
+      .image-container,
+      .description-container {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
       header {
         font-size: 2.2rem;
+      }
+
+      .description-container h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.8rem;
+        padding: 2rem 1rem;
+      }
+
+      .description-container {
+        padding: 1.5rem;
+      }
+
+      .description-container p {
+        font-size: 0.95rem;
+      }
+
+      .back-button-top a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
       }
     }
   </style>

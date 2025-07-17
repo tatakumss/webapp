@@ -1,27 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style/index.css">
-  <title>Welcome Site</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | Albay School Tracker</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #dbeafe, #fef3c7);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 800px;
+      background: linear-gradient(to right, #dbeafe, #fef3c7);
+      padding: 3rem 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #1e3a8a;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      text-align: justify;
+      color: #444;
+    }
+
+    .enter-btn {
+      margin-top: 2.5rem;
+      background-color: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .enter-btn:hover {
+      background-color: #2563eb;
+    }
+
+    /* Weather box fixed top right */
+    #weatherBox {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+      padding: 1rem 1.2rem;
+      max-width: 200px;
+      font-size: 0.9rem;
+      color: #222;
+      text-align: center;
+      z-index: 1000;
+      user-select: none;
+    }
+
+    #weatherBox img {
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      .container {
+        padding: 2rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .enter-btn {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+      }
+
+      #weatherBox {
+        max-width: 160px;
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+      }
+
+      #weatherBox img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <div class="weather-box" id="weatherBox">
-    Loading weather...
-  </div>
+  <!-- Weather Box -->
+  <div id="weatherBox">Loading weather...</div>
 
-  <div class="container">
+  <!-- Main Welcome Container -->
+  <main class="container">
     <h1>School Location Tracker in Albay via QR Code</h1>
-    <p>Your go-to portal for live weather updates.</p>
-    <p>Plan your day with real-time data from Legazpi City.</p>
+    <p>
+      This is a web-based platform designed to help users easily find and explore major colleges and universities across Albay.
+      Each school featured on this site includes a brief profile, campus photo, and a QR code that, when scanned,
+      provides real-time directions or additional information via Google Maps or official sources.
+      This tool is ideal for students, parents, and visitors looking for quick, mobile-friendly access to school locations in the province.
+    </p>
     <a href="page2.html">
       <button class="enter-btn">ENTER</button>
     </a>
-  </div>
+  </main>
 
+  <!-- Weather Fetch Script -->
   <script>
     const apiKey = '3e8dcee3e3d0629d76c1d13a33d31c00';
     const city = 'Legazpi City';
@@ -31,22 +151,22 @@
         const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
         const data = await res.json();
 
-        const temp = data.main.temp;
+        const temp = data.main.temp.toFixed(1);
         const desc = data.weather[0].description;
         const icon = data.weather[0].icon;
         const humidity = data.main.humidity;
-        const tempMax = data.main.temp_max;
-        const tempMin = data.main.temp_min;
+        const tempMax = data.main.temp_max.toFixed(1);
+        const tempMin = data.main.temp_min.toFixed(1);
         const pressure = data.main.pressure;
 
         document.getElementById('weatherBox').innerHTML = `
           <strong>Weather in ${city}</strong><br>
-          <img src="https://openweathermap.org/img/wn/${icon}.png" alt="${desc}" style="vertical-align: middle;"><br>
+          <img src="https://openweathermap.org/img/wn/${icon}.png" alt="${desc}" /><br>
           <strong>${temp}°C</strong>, ${desc}<br>
-          <strong>Humidity:</strong> ${humidity}%<br>
-          <strong>Max Temp:</strong> ${tempMax}°C<br>
-          <strong>Min Temp:</strong> ${tempMin}°C<br>
-          <strong>Pressure:</strong> ${pressure} hPa
+          Humidity: ${humidity}%<br>
+          Max: ${tempMax}°C<br>
+          Min: ${tempMin}°C<br>
+          Pressure: ${pressure} hPa
         `;
       } catch (err) {
         document.getElementById('weatherBox').innerText = 'Failed to load weather.';
@@ -58,4 +178,5 @@
   </script>
 
 </body>
+
 </html>

@@ -1,154 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>University of Santo Tomas - Legazpi</title>
   <style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom right, #FFCB61, #FDF5AA);
-  color: #333;
-  min-height: 100vh;
-}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #FFCB61, #FDF5AA);
+      color: #333;
+      min-height: 100vh;
+    }
 
-header {
-  text-align: center;
-  padding: 3rem 1rem 2rem;
-  color: black;
-  font-size: 2.8rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-  background-color: #FAEB92;
-}
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background-color: #FAEB92;
+      font-size: 2.8rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    }
 
-.main-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
-  gap: 2rem;
-}
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+      gap: 2rem;
+    }
 
-.image-container {
-  flex: 1 1 300px;
-  max-width: 500px;
-  margin-top: 20px;
-  transform: translateX(-10px);
-}
+    .image-container, .description-container {
+      flex: 1 1 200px;
+      max-width: 100%;
+    }
 
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
+    .image-container img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
 
-.description-container {
-  flex: 1 1 300px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
+    .description-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
 
-.description-container h2 {
-  color: #FFCB61;
-  margin-bottom: 1rem;
-}
+    .description-container h2 {
+      color: #FFCB61;
+      margin-bottom: 1rem;
+    }
 
-.description-container p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #444;
-  text-align: justify;
-}
+    .description-container p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: justify;
+      color: #444;
+    }
 
-.qr-container {
-  margin-top: 2rem;
-  text-align: center;
-  background: #fff8e0;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
+    .qr-container {
+      margin-top: 2rem;
+      text-align: center;
+      background: #fff8e0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
 
-.qr-container img {
-  max-width: 120px;
-  width: 100%;
-  height: auto;
-}
+    .qr-container img {
+      width: 100%;
+      max-width: 120px;
+    }
 
-.qr-container p {
-  margin-top: 0.8rem;
-  color: #333;
-  font-weight: 500;
-}
+    .qr-container p {
+      margin-top: 0.8rem;
+      font-weight: 500;
+    }
 
-.back-button-top {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-}
+    .back-button-top {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
 
-.back-button-top a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #FFCB61;
-  color: #333;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease;
-}
+    .back-button-top a {
+      padding: 0.5rem 1rem;
+      background-color: #FFCB61;
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: background-color 0.3s;
+    }
 
-.back-button-top a:hover {
-  background-color: #f5b63e;
-}
+    .back-button-top a:hover {
+      background-color: #f5b63e;
+    }
 
+    @media (max-width: 768px) {
+      header { font-size: 2.2rem; }
+      .main-container { flex-direction: column; padding: 1.5rem; }
+      .description-container h2 { font-size: 1.5rem; }
+    }
 
-@media (max-width: 768px) {
-  .main-container {
-    flex-direction: column;
-    padding: 1.5rem;
-  }
-
-  header {
-    font-size: 2.2rem;
-  }
-}
-
+    @media (max-width: 480px) {
+      header { font-size: 1.8rem; padding: 3rem 1rem; }
+      .description-container p { font-size: 1rem; }
+      .back-button-top a { font-size: 0.9rem; }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    University of Santo Tomas - Legazpi
-  </header>
+  <header>University of Santo Tomas - Legazpi</header>
 
   <section class="main-container">
     <div class="image-container">
       <img src="assets/ustl-campus.jpg" alt="UST Legazpi Campus">
     </div>
-
     <div class="description-container">
       <h2>Academic Excellence at UST-Legazpi</h2>
-      <p>
-        University of Santo Tomas-Legazpi (UST-Legazpi) is a Dominican Catholic institution known for its commitment to academic excellence, values-based education, and student-centered learning. It offers a wide range of programs in Arts and Sciences, Business, Education, Health Sciences, Engineering, and Law.
-      </p>
-      <p>
-        The university provides a dynamic academic environment with state-of-the-art facilities, highly qualified faculty, and innovative curriculum frameworks designed to develop critical thinkers and future leaders. UST-Legazpi emphasizes holistic education, integrating intellectual growth with ethical responsibility and community service.
-      </p>
+      <p>UST-Legazpi is a Dominican Catholic institution committed to academic excellence, values-based education, and student-centered learning. It offers a wide range of programs in Arts and Sciences, Business, Education, Health Sciences, Engineering, and Law.</p>
+      <p>The university provides a dynamic academic environment with state-of-the-art facilities, highly qualified faculty, and innovative curriculum frameworks.</p>
 
       <div class="qr-container">
         <img src="assets/ustl-qr.png" alt="Scan QR Code">

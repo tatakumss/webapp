@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bicol University</title>
   <style>
     * {
@@ -20,10 +21,10 @@
     header {
       text-align: center;
       padding: 3rem 1rem 2rem;
-      color: white;
+      color: #fff;
       font-size: 2.8rem;
       font-weight: bold;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
       background-color: #77BEF0;
     }
 
@@ -39,10 +40,8 @@
     }
 
     .image-container {
-      flex: 1 1 300px;
+      flex: 1 1 400px;
       max-width: 500px;
-      margin-top: 20px;
-      transform: translateX(-10px);
     }
 
     .image-container img {
@@ -53,8 +52,8 @@
     }
 
     .description-container {
-      flex: 1 1 300px;
-      background-color: rgba(255, 255, 255, 0.95);
+      flex: 1 1 400px;
+      background-color: rgba(255, 255, 255, 0.96);
       border-radius: 12px;
       padding: 2rem;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -63,6 +62,7 @@
     .description-container h2 {
       color: #FE7743;
       margin-bottom: 1rem;
+      font-size: 1.8rem;
     }
 
     .description-container p {
@@ -75,7 +75,7 @@
     .qr-container {
       margin-top: 2rem;
       text-align: center;
-      background: #fff4ed;
+      background: #fff4ee;
       padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
@@ -113,7 +113,21 @@
     }
 
     .back-button-top a:hover {
-      background-color: #e85c27;
+      background-color: #e45f2a;
+    }
+
+    @media (max-width: 1024px) {
+      header {
+        font-size: 2.4rem;
+      }
+
+      .description-container h2 {
+        font-size: 1.6rem;
+      }
+
+      .description-container p {
+        font-size: 1rem;
+      }
     }
 
     @media (max-width: 768px) {
@@ -122,8 +136,38 @@
         padding: 1.5rem;
       }
 
+      .image-container,
+      .description-container {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
       header {
         font-size: 2.2rem;
+      }
+
+      .description-container h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.8rem;
+        padding: 3rem 10px;
+      }
+
+      .description-container {
+        padding: 1.5rem;
+      }
+
+      .description-container p {
+        font-size: 0.95rem;
+      }
+
+      .back-button-top a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -140,17 +184,17 @@
     </div>
 
     <div class="description-container">
-      <h2>Excellence and Service at Bicol University</h2>
+      <h2>Empowering Minds, Transforming Lives</h2>
       <p>
-        Bicol University (BU) is a premier state university in the Bicol Region that fosters academic excellence and social responsibility. It offers diverse undergraduate and graduate programs in various fields including Engineering, Education, Medicine, Social Sciences, and Agriculture.
+        Bicol University (BU) is the premier state university in the Bicol Region, committed to providing quality education, research, and public service. With a wide array of academic offerings and a strong emphasis on excellence, BU fosters intellectual growth and regional development.
       </p>
       <p>
-        BU is known for producing competent professionals and leaders who are grounded in service and committed to national development. The university integrates research, extension, and instruction to provide holistic education for its students.
+        The university continues to evolve as a center of academic distinction and leadership, guided by its core values of scholarship, leadership, and service.
       </p>
 
       <div class="qr-container">
         <img src="assets/bu-qr.png" alt="Scan QR Code">
-        <p>Scan to locate about Bicol University</p>
+        <p>Scan to locate Bicol University</p>
       </div>
 
       <div class="back-button-top">

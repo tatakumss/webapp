@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ago Medical and Educational Center</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AMEC - Bicol</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,44 +17,39 @@
     header {
       text-align: center;
       padding: 3rem 1rem 2rem;
-      color: white;
+      background-color: #CC66DA;
       font-size: 2.8rem;
       font-weight: bold;
+      color: #fff;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-      background-color: #CC66DA;
     }
 
     .main-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: flex-start;
       max-width: 1200px;
       margin: auto;
       padding: 2rem;
       gap: 2rem;
     }
 
-    .image-container {
-      flex: 1 1 300px;
-      max-width: 500px;
-      margin-top: 20px;
-      transform: translateX(-10px);
+    .image-container, .description-container {
+      flex: 1 1 200px;
+      max-width: 100%;
     }
 
     .image-container img {
       width: 100%;
-      height: auto;
       border-radius: 12px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
     .description-container {
-      flex: 1 1 300px;
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255, 255, 255, 0.96);
       border-radius: 12px;
       padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     .description-container h2 {
@@ -75,16 +67,15 @@
     .qr-container {
       margin-top: 2rem;
       text-align: center;
-      background: #fff0fa;
+      background: #fdf1fb;
       padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
 
     .qr-container img {
-      max-width: 120px;
       width: 100%;
-      height: auto;
+      max-width: 120px;
     }
 
     .qr-container p {
@@ -108,12 +99,12 @@
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       transition: background-color 0.3s ease;
     }
 
     .back-button-top a:hover {
-      background-color: #a14dad;
+      background-color: #aa4db8;
     }
 
     @media (max-width: 768px) {
@@ -126,13 +117,27 @@
         font-size: 2.2rem;
       }
     }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.8rem;
+        padding: 3rem 1rem;
+      }
+
+      .description-container p {
+        font-size: 1rem;
+      }
+
+      .back-button-top a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    Ago Medical and Educational Center
-  </header>
+  <header>AMEC - Bicol</header>
 
   <section class="main-container">
     <div class="image-container">
@@ -140,17 +145,17 @@
     </div>
 
     <div class="description-container">
-      <h2>Excellence in Medical and Educational Training</h2>
+      <h2>Health and Education in Harmony</h2>
       <p>
-        Ago Medical and Educational Center (AMEC) is a pioneering institution offering comprehensive education in medicine and allied health sciences. Known for its commitment to quality and ethical medical practice, AMEC has been producing healthcare professionals who are competent, compassionate, and service-oriented.
+        AMEC-BCCM (Ago Medical and Educational Center – Bicol Christian College of Medicine) is a renowned institution for healthcare and medical education in the Bicol region. With decades of excellence in nursing, medical, and allied health programs, AMEC is a pillar of healthcare education.
       </p>
       <p>
-        With modern facilities, experienced faculty, and a curriculum rooted in research and community service, AMEC stands out as a top choice for aspiring healthcare providers in the region.
+        The school combines academic rigor with compassionate care, producing globally competent and ethically grounded professionals.
       </p>
 
       <div class="qr-container">
-        <img src="assets/ago-qr.png" alt="Scan QR Code">
-        <p>Scan to locate about AMEC</p>
+        <img src="assets/amec-qr.png" alt="Scan QR Code">
+        <p>Scan to learn more about AMEC</p>
       </div>
 
       <div class="back-button-top">
